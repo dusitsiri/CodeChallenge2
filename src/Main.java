@@ -13,15 +13,34 @@ public class Main {
         int thisAD = Integer.parseInt(valentine[2])-543;    //AD or A.D. means Christian era
 
         //find total day, Next 1500 days
-        int day = 0;
+        int day, = 0;
+        int countYear = 0;
         while (day < 1500){
             if(isLeapYear(thisAD)) day = day + IntStream.of(monthLeapYear).sum();
             else day = day + IntStream.of(monthNotLeapYear).sum();
 //            System.out.println(day);
-            thisAD = thisAD+1;
+            thisAD+=1;
+            countYear+=1;
         }
-        int dayExpand = day - (1500 + monthLeapYear[0] + Integer.parseInt(valentine[0]));   //total day sub 1500 days integrate with start valentine's day in first year
-//        System.out.println(dayExpand);
+
+        // Valentine's day greater than or equals 1500 days
+        System.out.println(day);
+        System.out.println(countYear);
+
+        int dayExpand = day - 1500;
+        System.out.println("remain day that greater than 1500 days: ");
+        System.out.println(dayExpand);
+
+        int result = 0;
+        if ((countYear-1)%4 == 0 && dayExpand > (monthLeapYear[0]+Integer.parseInt(valentine[0]))){
+            for (int month : monthNotLeapYear) {
+                result = dayExpand -
+            }
+
+        } else{
+
+        }
+
 
 
     }
